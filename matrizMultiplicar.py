@@ -1,0 +1,40 @@
+#multiplicacion de matrices cuadradas
+matrizA = []
+matrizB = []
+matrizC = []
+dimension = int(input("dimensiones de la matriz cuadrada: "))
+#Insertar matriz A
+for i in range(dimension):
+    matrizA.append([])
+    for j in range(dimension):
+        matrizA[i].append(int(input(f"fila {i+1}, columna {j+1}: ")))
+print("="*13)
+print("Matriz A")
+for fila in matrizA:
+    print(fila)
+print("="*13)
+print("Ambas matrices tienen las mismas dimensiones")
+#Insertar matriz B
+print("Inserte los valores de la matriz B")
+for i in range(dimension):
+    matrizB.append([])
+    for j in range(dimension):
+        matrizB[i].append(int(input(f"fila {i+1}, columna {j+1}: ")))
+print("="*13)
+print("Matriz B")
+for fila in matrizB:
+    print(fila)
+print("="*13)
+#Multiplicacion de matrices
+for i in range(dimension):
+    fila = []
+    for j in range(dimension):
+        suma = 0
+        for k in range(dimension):
+            suma += matrizA[i][k] * matrizB[k][j]
+        fila.append(suma)
+    matrizC.append(fila)
+#Mostrar matrices
+print("La matriz resultante es:")
+for fila in matrizC:
+    print(fila)
